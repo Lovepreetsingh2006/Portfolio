@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Education | Lovepreet Singh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: white;
+            color: black;
+        }
+
+        header {
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 9%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #007bff;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: black;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #007bff;
+            border-bottom: 3px solid #007bff;
+        }
+
+        @media(max-width:995px) {
+            nav {
+                position: absolute;
+                display: none;
+                top: 0;
+                right: 0;
+                width: 40%;
+                border-left: 3px solid #007bff;
+                border-bottom: 3px solid #007bff;
+                border-bottom-left-radius: 2rem;
+                padding: 1rem solid;
+                background-color: #f0f0f0;
+                border-top: 0.1rem solid rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+
+            nav a:hover,
+            nav a.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #007bff;
+            }
+        }
+
+        .education-section {
+            padding: 5rem 9%;
+            text-align: center;
+            margin-top: 8rem;
+        }
+
+        .education-section h1 {
+            font-size: 4rem;
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .education-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .education-item {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 1rem;
+            border: solid 2px rgba(30, 144, 255, 0.8);
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .education-item h3 {
+            font-size: 2rem;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .education-item p {
+            font-size: 1.6rem;
+            color: black;
+        }
+
+        .education-item span {
+            font-size: 1.4rem;
+            color: #007bff;
+        }
+
+        .social-icons {
+            margin-top: 3rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+            border: 0.2rem solid #007bff;
+            font-size: 2rem;
+            border-radius: 50%;
+            margin: 1.5rem;
+            transition: 0.3s ease;
+            color: #007bff;
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: scale(1.3) translateY(-5px);
+            background-color: #007bff;
+            box-shadow: 0 0 25px #007bff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Lovepreet <br>Singh</a>
+        <nav>
+            <a href="portfolio.3.html">Home</a>
+            <a href="skil.html">Skills</a>
+            <a href="edu.html" class="active">Education</a>
+            <a href="contact3.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="education-section">
+        <h1>Education</h1>
+
+        <div class="education-timeline">
+            <div class="education-item">
+                <h3>10th Grade</h3>
+                <p><span>School:</span> St. Soldier Divine Public School, Garhdiwala</p>
+                <p><span>Year of Completion:</span> 2022</p>
+            </div>
+
+            <div class="education-item">
+                <h3>12th Grade</h3>
+                <p><span>Institute:</span> Hoshiarpur Institute of Management and Technology</p>
+                <p><span>Year of Completion:</span> 2024</p>
+            </div>
+
+            <div class="education-item">
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <p><span>University:</span> Lovely Professional University, Phagwara</p>
+                <p><span>Year:</span> Currently Pursuing</p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="http://linkedin.com/in/lovepreet2006"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Lovepreetsingh2006"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/LovepreetS81274"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </section>
+
+</body>
+</html>

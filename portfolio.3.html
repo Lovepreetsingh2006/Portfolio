@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: white;
+            color: black;
+        }
+
+        header {
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 9%;
+            background-color: transparent;
+            filter: drop-shadow(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #007bff; 
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: black;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #007bff; 
+            border-bottom: 3px solid #007bff; 
+        }
+
+        @media(max-width: 995px) {
+            nav {
+                position: absolute;
+                display: none;
+                top: 0;
+                right: 0;
+                width: 40%;
+                border-left: 3px solid #007bff; 
+                border-bottom: 3px solid #007bff; 
+                border-bottom-left-radius: 2rem;
+                padding: 1rem solid;
+                background-color: #f0f0f0;
+                border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+
+            nav a:hover,
+            nav a.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #007bff; 
+            }
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 5rem 9% 5rem;
+        }
+
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8rem;
+            background-color: white;
+        }
+
+        .home .home-content h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        span {
+            color: #007bff; 
+        }
+
+        .home-content h3 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .home-content p {
+            font-size: 1.6rem;
+        }
+
+        .home-img {
+            border-radius: 50%;
+        }
+
+        .home-img img {
+            position: relative;
+            width: 32vw;
+            border-radius: 50%;
+            box-shadow: 0 0 25px solid #007bff; 
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+
+        .home-img img:hover {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+            border: 0.2rem solid #007bff; 
+            font-size: 2rem;
+            border-radius: 50%;
+            margin: 3rem 1.5rem 3rem 0;
+            transition: 0.3s ease;
+            color: #007bff; 
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: scale(1.3) translateY(-5px);
+            background-color: #007bff; 
+            box-shadow: 0 0 25px #007bff; 
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background-color: white;
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            color: #007bff; 
+            letter-spacing: 0.3rem;
+            font-weight: 600;
+            border: 2px solid #007bff; 
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale3d(1.03);
+            background-color: #007bff; 
+            color: white;
+            box-shadow: 0 0 25px #007bff; 
+        }
+
+        .typing-text {
+            font-size: 34px;
+            font-weight: 600;
+            min-width: 280px;
+        }
+
+        .typing-text span {
+            position: relative;
+        }
+
+        .typing-text span::before {
+            content: "software Developer";
+            color: #007bff; 
+            animation: words 20s infinite;
+        }
+
+        .typing-text span::after {
+            content: "";
+            background-color: white;
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            border-left: 3px solid white;
+            right: -8;
+            animation: cursor 0.6s infinite;
+        }
+
+        @keyframes cursor {
+            to {
+                border-left: 3px solid #007bff;
+            }
+        }
+
+        @keyframes words {
+            0%, 20% {
+                content: "Software engineer";
+            }
+            21%, 40% {
+                content: "Student";
+            }
+            41%, 60% {
+                content: "Web Designer";
+            }
+            61%, 80% {
+                content: "Explorer";
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .home {
+                gap: 4rem;
+            }
+        }
+
+        @media(max-width: 995px) {
+            .home {
+                flex-direction: column;
+                margin: 5rem 4rem;
+            }
+
+            .home .home-content h3 {
+                font-size: 2.5rem;
+            }
+
+            .home-content h1 {
+                font-size: 5rem;
+            }
+
+            .home-img img {
+                width: 70vw;
+                margin-top: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Lovepreet <br>Singh</a>
+
+        <nav>
+            <a href="portfolio.3.html" class="active"> Home</a>
+            <a href="skil.html" >Skills</a>
+            <a href="edu.html" >Education</a>
+            <a href="contact3.html" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="love.jpeg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's Lovepreet Singh <span></span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>I’m Lovepreet Singh, a B.Tech Computer Science and Engineering student at Lovely Professional University. I’m focused on building my skills in HTML, CSS, and Python, with a particular goal of advancing in C++ and Data Structures & Algorithms (DSA). I love creating unique projects that address real-world issues, which I share on GitHub to track my growth and contribute to the tech community. Recently, I completed a project exploring the environmental impacts of overpopulation, reflecting my commitment to impactful, tech-driven solutions. Currently, I’m also working on a campus community website to further support my university network.</p>
+            <div class="social-icons">
+                <a href="http://linkedin.com/in/lovepreet2006"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Lovepreetsingh"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/lovepreet.singh/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="contact3.html" class="btn">Let's Talk</a>
+        </div>
+    </section>
+</body>
+</html>

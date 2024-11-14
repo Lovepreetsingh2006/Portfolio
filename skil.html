@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Skills | Lovepreet Singh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: white;
+            color: #1E90FF;
+        }
+
+        header {
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 9%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #1E90FF;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: #1E90FF;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #1E90FF;
+            border-bottom: 3px solid #1E90FF; 
+        }
+
+        @media(max-width:995px) {
+            nav {
+                position: absolute;
+                display: none;
+                top: 0;
+                right: 0;
+                width: 40%;
+                border-left: 3px solid #1E90FF; 
+                border-bottom: 3px solid #1E90FF; 
+                border-bottom-left-radius: 2rem;
+                padding: 1rem solid;
+                background-color: #161616;
+                border-top: 0.1rem solid rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+
+            nav a:hover,
+            nav a.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #1E90FF; 
+            }
+        }
+
+        .skills-section {
+            padding: 5rem 9%;
+            text-align: center;
+            margin-top: 8rem;
+        }
+
+        .skills-section h1 {
+            font-size: 4rem;
+            color: #1E90FF; 
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            transition: 0.3s;
+            border: solid 2px rgba(30, 144, 255, 0.8);
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+        }
+
+        .skill-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(30, 144, 255, 0.8);
+        }
+
+        .skill-icon {
+            font-size: 4rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .skill-description {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .projects-section {
+            padding: 5rem 9%;
+            background-color: #f5f5f5;
+        }
+
+        .projects-section h1 {
+            font-size: 4rem;
+            color: #1E90FF;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .project-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .project-box h2 {
+            font-size: 2.5rem;
+            color: #1E90FF;
+            margin-bottom: 1rem;
+        }
+
+        .project-box p {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-box a {
+            font-size: 1.6rem;
+            color: #1E90FF;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #1E90FF;
+        }
+
+        .project-box a:hover {
+            color: #007bff;
+        }
+
+        .tech-used {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.2rem;
+            color: #1E90FF;
+            font-weight: 600;
+        }
+
+        .tech-icons {
+            font-size: 2rem;
+            margin-left: 0.5rem;
+            color: #1E90FF;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Lovepreet <br>Singh</a>
+        <nav>
+            <a href="portfolio.3.html">Home</a>
+            <a href="skil.html" class="active">Skills</a>
+            <a href="edu.html">Education</a>
+            <a href="contact3.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="skills-section">
+        <h1>My Skills</h1>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <i class="fa-brands fa-html5 skill-icon"></i>
+                <h2 class="skill-title">HTML</h2>
+                <p class="skill-description">Building structured, semantic HTML for responsive, accessible web pages.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-brands fa-css3-alt skill-icon"></i>
+                <h2 class="skill-title">CSS</h2>
+                <p class="skill-description">Creating visually engaging designs using CSS, animations, and flexbox/grid.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-brands fa-js skill-icon"></i>
+                <h2 class="skill-title">JavaScript</h2>
+                <p class="skill-description">Still in learning pace. Interactivity and functionality through dynamic, client-side scripting.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-brands fa-python skill-icon"></i>
+                <h2 class="skill-title">Python</h2>
+                <p class="skill-description">Working with Python for data processing, automation, and backend development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <h1>My Projects</h1>
+
+        <div class="project-box">
+            <h2>1. LPU Campus Community Website</h2>
+            <p>This project includes two webpages:</p>
+            <ul>
+                <li>First page: Displays upcoming campus events and campus clubs along with a chat box.</li>
+                <li>Second page: A working contact form for users to reach out.</li>
+            </ul>
+            <p><a href="https://github.com/Lovepreetsingh2006/Lovepreetsingh2006" target="_blank">View on GitHub</a></p>
+            <div class="tech-used">
+                Tech Used: 
+                <i class="fa-brands fa-html5 tech-icons"></i>
+                <i class="fa-brands fa-css3-alt tech-icons"></i>
+                <i class="fa-brands fa-js tech-icons"></i>
+            </div>
+        </div>
+
+        <div class="project-box">
+            <h2>2. Environmental Implications of Rising Populations</h2>
+            <p>This is a four-page website covering the following:</p>
+            <ul>
+                <li>Page 1: Introduction to the topic.</li>
+                <li>Page 2: Impacts of overpopulation on society and the environment.</li>
+                <li>Page 3: Facts related to population growth and its challenges.</li>
+                <li>Page 4: Possible solutions to tackle the challenges posed by overpopulation.</li>
+            </ul>
+            <p><a href="https://github.com/Lovepreetsingh2006/projectCHE" target="_blank">View on GitHub</a></p>
+            <div class="tech-used">
+                Tech Used: 
+                <i class="fa-brands fa-html5 tech-icons"></i>
+                <i class="fa-brands fa-css3-alt tech-icons"></i>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
